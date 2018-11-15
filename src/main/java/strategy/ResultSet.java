@@ -6,5 +6,5 @@ package strategy;
  */
 public class ResultSet
 {
-
+    /* 추후에 이곳에 필드에 표시 */
 }

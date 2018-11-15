@@ -50,8 +50,6 @@ public class Block implements Comparable<Block>
         this.unUsedCount++;
     }
 
-    // --------------------- Private Operations  -------------------------------
-
     // ---------------------  Getters & Setters  -------------------------------
     public String getBlockNumber() {
         return blockNumber;

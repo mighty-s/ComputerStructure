@@ -11,8 +11,7 @@ import java.util.Queue;
  */
 public class LRU implements CacheStrategy
 {
-    private int hitCount;     // hit 한 횟수
-
+    private int hitCount;      // hit 한 횟수
     public LRU()
     {
         hitCount = 0;
@@ -33,7 +32,8 @@ public class LRU implements CacheStrategy
         }
 
         pq.forEach(i->System.out.print(i.getBlockNumber() + " "));
-        return null;
+        System.out.printf("\t 캐시 적중률 : %f", ((double)hitCount/(double)blocks.length)*100);
+        return null; // 추후 코드 갈무리 필요
     }
 
     // ---------------------------- Private Operations --------------------------
@@ -57,7 +57,7 @@ public class LRU implements CacheStrategy
         if( pq.size() >= 3 )               // 1) 캐시 블록 수보다 클때 -> 페이지 폴트 발생
         {
             System.out.printf("페이지 폴트 발생 %s\n",blockNum);
-            pq.offer(new Block());
+            pq.offer(new Block());         // 우선순위 큐 트릭....
             pq.poll();
             pq.offer(new Block(blockNum)); //   새로운 블록 추가
             pq.poll();                     //   우선순위 큐에서 제일 앞에있는거 하나 제거 ( 제일 오래동안 안쓰인 블록 )
