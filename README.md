@@ -8,10 +8,10 @@ Written in Java, **이 프로젝트는 메이븐을 포함하고 있습니다.**
 --------------------------------------------------------------------
 ![answer](images/-1.JPG) 4/11 = 0.3636363636.....
 --------------------------------------------------------------------
-**블럭 | 블럭이 사용 안된 주기** <br>
-![progress1](images/0.JPG)
-![progress2](images/1.JPG)
-![progress3](images/2.JPG)
-![progress4](images/3.JPG)
-![progress5](images/4.JPG)
-![progress6](images/5.JPG)
+** [ 블럭 | 블럭이 사용 안된 주기 ] 형식** <br>
+![progress1](images/0.JPG)<br>
+![progress2](images/1.JPG)<br>
+![progress3](images/2.JPG)<br>
+![progress4](images/3.JPG)<br>
+![progress5](images/4.JPG)<br>
+![progress6](images/5.JPG)<br>
