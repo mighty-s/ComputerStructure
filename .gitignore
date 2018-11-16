@@ -5,4 +5,8 @@
 ComputerStructure.iml
 
 # 메이븐 Output Target 제거
+<<<<<<< HEAD
 target/
+=======
+.target/
+>>>>>>> 4d1b0967cf3c4a9bb0cb2e292a54d0b0dce26861
