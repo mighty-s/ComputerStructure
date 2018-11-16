@@ -1,5 +1,7 @@
 import strategy.CacheStrategy;
 import strategy.LRU.LRU;
+import strategy.ResultSet;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
@@ -19,31 +21,41 @@ public class Main
         printMenu(blocks);
     }
 
+    /**
+     * 메뉴를 출력하는 함수
+     * @param blocks input.txt 파일을 읽고 "99"를 제외한 블록들
+     */
     private static void printMenu(String[] blocks)
     {
         Scanner sc = new Scanner(System.in);
         String choice;
         CacheStrategy strategy = null;
+        ResultSet rs = null;
 
-        System.out.println("사용할 캐시 알고리즘을 선택하세요");
-        System.out.print("1. FIFO  |  2. LRU  >> ");
+        System.out.print(
+                "사용할 캐시 알고리즘을 선택하세요\n" +
+                "1. FIFO  |  2. LRU  >> "
+        );
+
         choice = sc.nextLine();
-
+        // Strategy Pattern
         switch (choice)
         {
             case "1":
-                // strategy = new FIFO();   -> 이곳에 FIFO 사용
+                // strategy = new FIFO();  ->  이곳에 FIFO 사용
                 break;
             case "2":
                 strategy = new LRU();
-                 break;
+                break;
             default:
                 System.out.println("허용하지 않는 선택입니다.");
                 break;
         }
 
         if (strategy != null)
-            strategy.doProcess(blocks);
+            rs = strategy.doProcess(blocks);
+
+        System.out.println(rs);
     }
 
     /**
