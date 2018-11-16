@@ -7,8 +7,8 @@ package strategy.LRU;
 public class Block implements Comparable<Block>
 {
     // -----------------------------   Field   -------------------------------
-    private int unUsedCount;          // 사용을 얼마나 안했는지 체크하는 필드
-    private String blockNumber;       // 블록 번호
+    private int unUsedCount;                // 사용을 얼마나 안했는지 체크하는 필드
+    private String blockNumber;             // 블록 번호
 
     // ---------------------------- Constructors  ----------------------------
     public Block()

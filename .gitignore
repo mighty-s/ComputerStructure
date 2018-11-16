@@ -3,3 +3,6 @@
 
 # Intellij 환경설정 파일 제거
 ComputerStructure.iml
+
+# 메이븐 Output Target 제거
+.target/
