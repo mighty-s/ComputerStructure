@@ -58,7 +58,7 @@ public class Cache
 
     public void printHitRatio(int blockSize)
     {
-        System.out.printf("캐시의 적중률 : %f %%", getHitRatio(blockSize));
+        System.out.printf("캐시의 적중률 : %.2f %%", getHitRatio(blockSize));
     }
 
     /**
