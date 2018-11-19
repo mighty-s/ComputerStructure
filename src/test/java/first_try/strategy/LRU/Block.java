@@ -1,4 +1,4 @@
-package strategy.LRU;
+package first_try.strategy.LRU;
 
 /**
  * @author sight

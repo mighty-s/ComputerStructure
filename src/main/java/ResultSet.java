@@ -1,8 +1,3 @@
-package strategy;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 /**
  * @author sight
  * @since 2018-11-15
@@ -15,10 +10,10 @@ public class ResultSet
     private int blockLength;            // 블록 길이
     private int hitCount;               // Hit 횟수
     private int missCount;              // 캐시 miss 횟수
-    private String[] blocks;                    // 캐시 블록에 남은 블록들
+    private String[] blocks;            // 캐시 블록에 남은 블록들
 
     // ---------------------- Constructor ---------------------------
-    public ResultSet(String[] blocks, int hitCount, int missCount,int blockLength)
+    public ResultSet(String[] blocks, int hitCount, int missCount, int blockLength)
     {
         this.blocks      = blocks;
         this.hitCount    = hitCount;

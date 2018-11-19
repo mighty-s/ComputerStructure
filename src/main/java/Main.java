@@ -1,6 +1,5 @@
-import strategy.CacheStrategy;
-import strategy.LRU.LRU;
-import strategy.ResultSet;
+import LRU.Block;
+import LRU.Cache;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,53 +8,27 @@ import java.util.stream.Stream;
 
 /**
  * @author sight
- * @since 2018-11-13
+ * @since 2018-11-19
+ *
+ * 다시 짜즈아... ㅜㅜ
  */
 public class Main
 {
-    // Enter Point
+
+    // Entering Point
     public static void main(String[] args) throws IOException
     {
         String[] blocks = readFile("src/main/resources/input2.txt");
 
-        printMenu(blocks);
-    }
+        Cache cache = new Cache(3);
 
-    /**
-     * 메뉴를 출력하는 함수
-     * @param blocks input.txt 파일을 읽고 "99"를 제외한 블록들
-     */
-    private static void printMenu(String[] blocks)
-    {
-        Scanner sc = new Scanner(System.in);
-        String choice;
-        CacheStrategy strategy = null;
-        ResultSet rs = null;
-
-        System.out.print(
-                "사용할 캐시 알고리즘을 선택하세요\n" +
-                "1. FIFO  |  2. LRU  >> "
-        );
-
-        choice = sc.nextLine();
-        // Strategy Pattern
-        switch (choice)
+        for(String block : blocks)
         {
-            case "1":
-                // strategy = new FIFO();  ->  이곳에 FIFO 사용
-                break;
-            case "2":
-                strategy = new LRU();
-                break;
-            default:
-                System.out.println("허용하지 않는 선택입니다.");
-                break;
+            cache.doProcess(new Block(block));
         }
 
-        if (strategy != null)
-            rs = strategy.doProcess(blocks);
-
-        System.out.println(rs);
+        cache.printCache();
+        cache.printHitRatio(blocks.length);
     }
 
     /**
@@ -75,6 +48,6 @@ public class Main
         sc.close();
         Stream<String> stream = Stream.of(sb.toString().split(" "));
         return  stream.filter(i-> !"99".equals(i))
-                      .toArray(String[]::new);
+                .toArray(String[]::new);
     }
 }
