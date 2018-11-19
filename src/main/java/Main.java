@@ -18,7 +18,7 @@ public class Main
     // Entering Point
     public static void main(String[] args) throws IOException
     {
-        String[] blocks = readFile("src/main/resources/input.txt");
+        String[] blocks = readFile("src/main/resources/input2.txt");
 
         Cache cache = new Cache(3);
 
