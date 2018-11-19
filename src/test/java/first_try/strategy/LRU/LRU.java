@@ -1,11 +1,10 @@
-package strategy.LRU;
+package first_try.strategy.LRU;
 
-import strategy.CacheStrategy;
-import strategy.ResultSet;
+import first_try.strategy.CacheStrategy;
+import first_try.strategy.ResultSet;
 
 import java.util.PriorityQueue;
 import java.util.Queue;
-import java.util.stream.Collectors;
 
 /**
  * @author sight

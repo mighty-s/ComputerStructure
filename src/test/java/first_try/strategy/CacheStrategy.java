@@ -1,4 +1,4 @@
-package strategy;
+package first_try.strategy;
 
 /**
  * @author sight
